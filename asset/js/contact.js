@@ -91,7 +91,7 @@ form.addEventListener("submit", async function (event) {
         }
         if (data.length === 0) {
             alert("Tài khoản không tồn tại, vui lòng đăng nhập");
-            return;
+            window.location.href = "login.html";
         }
         const { error: insertError } = await supabaseClient
             .from("GopY")

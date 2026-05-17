@@ -261,13 +261,13 @@ td .trang-thai {
 }
 .modal-actions {
     display: flex;
-    gap: 16px;                           /* Khoảng cách giữa 2 nút */
+    gap: 16px;                       
 }
 .modal-actions button {
-    flex: 1;                             /* Chia đều 50% độ rộng cho mỗi nút */
+    flex: 1;                            
     padding: 12px 0;
     border: none;
-    border-radius: 25px;                 /* Bo tròn dạng viên thuốc */
+    border-radius: 25px;              
     font-size: 15px;
     font-weight: 500;
     cursor: pointer;
@@ -275,7 +275,7 @@ td .trang-thai {
 }
 
 .btn-cancel {
-    background-color: #e2e8f0;           /* Màu xám nhạt */
+    background-color: #e2e8f0;      
     color: #4a5568;
 }
 .btn-cancel:hover {
@@ -283,23 +283,22 @@ td .trang-thai {
 }
 
 .btn-confirm {
-    background-color: #e07a7a;           /* Màu đỏ hồng nhạt giống ảnh */
+    background-color: #e07a7a;           
     color: #ffffff;
 }
 .btn-confirm:hover {
     background-color: #d16666;
 }
-/* --- CSS CHO MODAL THÊM SÁCH --- */
 .add-book-box {
     background-color: #fdfaf6;
     border-radius: 16px;
     width: 90%;
     max-width: 380px;
-    overflow: hidden; /* Cắt góc tròn cho phần header bám sát */
+    overflow: hidden; 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     transform: scale(0.9);
     transition: transform 0.2s ease;
-    text-align: left; /* Căn trái khác với modal xóa */
+    text-align: left;
 }
 
 .modal-overlay.show .add-book-box {
@@ -307,7 +306,7 @@ td .trang-thai {
 }
 
 .add-modal-header {
-    background-color: #c5e1c5; /* Màu xanh lá mạ theo ảnh */
+    background-color: #c5e1c5; 
     padding: 16px 20px;
 }
 

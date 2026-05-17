@@ -49,17 +49,39 @@ body {
 }
 .wrap {
     display: flex;               
-    width: 900px;               
-    height: 550px;                
+    width: 90%;            
+    max-width: 900px;      
+    min-height: 550px;   
     background-color: #ffffff;
     border-radius: 16px;        
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
     overflow: hidden;            
 }
 
+.right {
+    width: 55%;                  
+    padding: 40px 60px;           
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.input input {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;           
+    height: 48.4px;
+    padding: 12px 15px;
+    border: 0.8px solid #DDDDDD;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
 .left {
     width: 45%;                   
-    height: 100%;
+    height: 559px;
 }
 
 .left img {
@@ -67,13 +89,6 @@ body {
     height: 100%;
     object-fit: cover;           
     object-position: center;
-}
-
-.right {
-    width: 55%;                  
-    padding: 40px 60px;           
-    display: flex;
-    flex-direction: column;     
 }
 
 .dieu-huong {
@@ -110,18 +125,6 @@ body {
     gap: 16px;
 }
 
-.input input{
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    width: 375px;
-    height: 48.4px;
-    padding: 12px 15px;
-    border: 0.8px solid #DDDDDD;
-    display: block;
-    box-sizing: border-box;
-    border-radius: 12px;
-}
 .input input:focus {
     box-shadow: none;
     border-color: var(--primary-green);
@@ -182,4 +185,74 @@ body {
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+.wrap {
+    display: flex;               
+    width: 90%;            
+    max-width: 900px;      
+    min-height: 550px;   
+    background-color: #ffffff;
+    border-radius: 16px;        
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    overflow: hidden;            
+}
+
+.right {
+    width: 55%;                  
+    padding: 40px 60px;           
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+}
+.input input {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;           
+    height: 48.4px;
+    padding: 12px 15px;
+    border: 0.8px solid #DDDDDD;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+@media screen and (max-width: 980px) {
+    .notification {
+        width: 90%;
+        right: 5%;
+        top: 20px;
+    }
+    .wrap {
+        flex-direction: column;
+        width: 95%; 
+        min-height: auto;
+    }
+    .left {
+        display: none; 
+    }
+    .right {
+        width: 100%;
+        padding: 40px 20px; 
+    }
+    .dieu-huong {
+        gap: 10px;
+        margin-bottom: 20px;
+    } 
+    .dang-nhap, .dang-ki {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .other-login span {
+        margin: 0 15px;
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .other-login span {
+        margin: 0 10px;
+        font-size: 12px;
+    }
+    .right {
+        padding: 30px 15px;
+    }
 }
