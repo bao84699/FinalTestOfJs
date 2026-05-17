@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+Thambi+2:wght@400..800&family=Diplomata&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&family=Kablammo&family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/css/dashboard.css">
+    <title>DashBoard</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="top">
+            <div class="title">Quản lí kho sách</div>
+            <!-- <div class="input">
+                <i data-lucide="search"></i>
+                <input type="text" placeholder="Tìm kiếm sách tại đây">
+            </div> -->
+            <div class="action">
+                <div class="them-sach-moi" id="addBook">Thêm sách mới</div>
+                <div class="thoat" id="logOut">
+                    <i data-lucide="log-out"></i>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Thumbnail</th>
+                            <th>Tên sách</th>
+                            <th>Tác giả</th>
+                            <th>Giá</th>
+                            <th>Danh mục</th>
+                            <th>Status</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-list">
+                        <tr>
+                            <td>0001</td>
+                            <td>Thumbnail</td>
+                            <td>Món quà đến từ cõi chết</td>
+                            <td>Thảo Trang</td>
+                            <td>165.000 VND</td>
+                            <td>Truyện kinh dị</td>
+                            <td><div class="trang-thai">Đang bán</div></td>
+                            <td>
+                                <div class="action-btn">
+                                    <div class="button" id="delete">
+                                        <i data-lucide="trash"></i>
+                                    </div>
+                                    <div class="button" id="edit">
+                                        <i data-lucide="square-pen"></i>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal-box">
+            <p class="modal-message">Bạn có chắc chắn muốn xóa cuốn sách này?</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" id="btnCancel">Hủy</button>
+                <button class="btn-confirm" id="btnConfirm">Xác nhận xóa</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="addModal">
+        <div class="add-book-box">
+            <div class="add-modal-header">
+                <h2>Thêm sách mới</h2>
+            </div>
+            <form id="addBookForm" class="add-modal-body">
+                
+                <div class="input-group">
+                    <label>Tên sách</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="align-justify"></i>
+                        <input type="text" id="addTitle" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Tác giả</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="user"></i>
+                        <input type="text" id="addAuthor" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Giá</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="circle-dollar-sign"></i>
+                        <input type="number" id="addPrice" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Danh mục</label>
+                    <div class="input-wrapper">
+                        <select id="addCategory">
+                            <option value="Văn học">Văn học</option>
+                            <option value="Kinh tế">Kinh tế</option>
+                            <option value="Thiếu nhi">Thiếu nhi</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Link ảnh</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="link"></i>
+                        <input type="text" id="addThumbnail" placeholder="Mặc định">
+                    </div>
+                </div>
+
+                <div class="add-modal-actions">
+                    <button type="button" id="btnCloseAddModal" class="add-btn-cancel">Hủy</button>
+                    <button type="submit" id="btnSubmitAdd" class="add-btn-confirm">Lưu sách</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <div class="modal-overlay" id="editModal">
+        <div class="add-book-box">
+            <div class="add-modal-header" style="background-color: #b3cde3;"> <h2>Sửa thông tin sách</h2>
+            </div>
+            <form id="editBookForm" class="add-modal-body">
+                <input type="hidden" id="editBookId">
+                <div class="input-group">
+                    <label>Tên sách</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="align-justify"></i>
+                        <input type="text" id="editTitle" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Tác giả</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="user"></i>
+                        <input type="text" id="editAuthor" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Giá</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="circle-dollar-sign"></i>
+                        <input type="number" id="editPrice" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Danh mục</label>
+                    <div class="input-wrapper">
+                        <select id="editCategory">
+                            <option value="Văn học">Văn học</option>
+                            <option value="Kinh tế">Kinh tế</option>
+                            <option value="Thiếu nhi">Thiếu nhi</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Link ảnh</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="link"></i>
+                        <input type="text" id="editThumbnail">
+                    </div>
+                </div>
+                <div class="add-modal-actions">
+                    <button type="button" id="btnCloseEditModal" class="add-btn-cancel">Hủy</button>
+                    <button type="submit" id="btnSubmitEdit" class="add-btn-confirm" style="background-color: #b3cde3;">Cập nhật</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="asset/js/dashboard.js"></script>
+</body>

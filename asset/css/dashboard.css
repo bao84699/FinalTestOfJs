@@ -1,0 +1,396 @@
+:root {
+    --bg-body: #FAF8F3;
+    --bg-sidebar: #F4EFE6;
+    --primary-green: #2B5740;
+    --light-green: #D4EDDA;
+    --text-dark: #1A1A1A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.5s;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eef2f3;
+}
+
+.wrap {
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 40px 0;
+}
+.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.top .title {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+.top .input {
+    width: 300px;
+    height: 43.6px;
+    padding: 8px 15px;
+    gap: 10px;
+    border: 0.8px solid #E0DCD3;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    background: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1A1A1A
+}
+.input input {
+    width: 80%;
+    border: none;
+}
+.input input:focus {
+    outline: none;
+}
+.top .action {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.them-sach-moi {
+    width: 183.837px;
+    height: 45.6px;
+    border: 0.8px solid #00000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #2B5740;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.thoat {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6C757D;
+    cursor: pointer;
+}
+.bottom {
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+}
+thead tr {
+    width: 100%;
+    height: 70px;
+    display: flex;
+}
+tr th {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: #545454;     
+    padding: 10px;
+}
+tr th:nth-child(1) {
+    width: 78px;
+}
+tr th:nth-child(2) {
+    width: 130px;
+}
+tr th:nth-child(3) {
+    width: 280px;
+}
+tr th:nth-child(4) {
+    width: 130px;
+}
+tr th:nth-child(5) {
+    width: 140px;
+}
+tr th:nth-child(6) {
+    width: 190px;
+}
+tr th:nth-child(7) {
+    width: 100px;
+}
+tr th:nth-child(8) {
+    width: 110px;
+    padding-left: 15px;
+}
+tbody tr {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    margin-bottom: 15px;
+}
+tr td {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: #545454;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 15px;
+}
+tr td:nth-child(1) {
+    width: 78px;
+}
+tr td:nth-child(2) {
+    width: 130px;
+}
+tr td:nth-child(3) {
+    width: 280px;
+}
+tr td:nth-child(4) {
+    width: 130px;
+}
+tr td:nth-child(5) {
+    width: 140px;
+}
+tr td:nth-child(6) {
+    width: 190px;
+}
+tr td:nth-child(7) {
+    width: 100px;
+    padding: 0;
+}
+tr td:nth-child(8) {
+    width: 110px;
+    padding-left: 15px;
+}
+td .trang-thai {
+    padding: 8px 14px;
+    border-radius: 35px;
+    background-color: #004f1e;
+    color: #FFFFFF;
+}
+#book-list tr:nth-child(odd) {
+    background-color: var(--light-green);
+    border-radius: 15Px;
+}
+
+#book-list tr:nth-child(even) {
+    background-color: white;
+}
+.action-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.button {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    border: 2px solid var(--primary-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.delete-btn {
+    border-color: #680000;
+}
+.delete-btn svg {
+    stroke: #680000;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(2px);      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;                      
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;       
+}
+.modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal-box {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;               
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transform: scale(0.9);              
+    transition: transform 0.2s ease;
+}
+
+.modal-overlay.show .modal-box {
+    transform: scale(1);  
+}
+.modal-message {
+    font-size: 16px;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-bottom: 24px;
+    margin-top: 0;
+}
+.modal-actions {
+    display: flex;
+    gap: 16px;                           /* Khoảng cách giữa 2 nút */
+}
+.modal-actions button {
+    flex: 1;                             /* Chia đều 50% độ rộng cho mỗi nút */
+    padding: 12px 0;
+    border: none;
+    border-radius: 25px;                 /* Bo tròn dạng viên thuốc */
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel {
+    background-color: #e2e8f0;           /* Màu xám nhạt */
+    color: #4a5568;
+}
+.btn-cancel:hover {
+    background-color: #cbd5e1;
+}
+
+.btn-confirm {
+    background-color: #e07a7a;           /* Màu đỏ hồng nhạt giống ảnh */
+    color: #ffffff;
+}
+.btn-confirm:hover {
+    background-color: #d16666;
+}
+/* --- CSS CHO MODAL THÊM SÁCH --- */
+.add-book-box {
+    background-color: #fdfaf6;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 380px;
+    overflow: hidden; /* Cắt góc tròn cho phần header bám sát */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transform: scale(0.9);
+    transition: transform 0.2s ease;
+    text-align: left; /* Căn trái khác với modal xóa */
+}
+
+.modal-overlay.show .add-book-box {
+    transform: scale(1);
+}
+
+.add-modal-header {
+    background-color: #c5e1c5; /* Màu xanh lá mạ theo ảnh */
+    padding: 16px 20px;
+}
+
+.add-modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.add-modal-body {
+    padding: 20px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding-left: 5px;
+}
+.input-wrapper i {
+    position: absolute;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    color: #888;
+}
+.input-wrapper input, 
+.input-wrapper select {
+    width: 100%;
+    padding: 10px 12px 10px 5px;
+    font-size: 14px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.input-wrapper select {
+    padding-left: 0px;
+}
+.input-wrapper input:focus, .input-wrapper select:focus {
+    border-color: #c5e1c5;
+}
+.add-modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+.add-modal-actions button {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.add-btn-cancel {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+.add-btn-confirm {
+    background-color: #c5e1c5;
+    color: #1a1a1a;
+}
+.add-modal-actions button:hover {
+    opacity: 0.8;
+}
+.modal-overlay.show .add-book-box {
+    transform: scale(1);
+}

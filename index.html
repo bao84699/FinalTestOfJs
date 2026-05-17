@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+Thambi+2:wght@400..800&family=Diplomata&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&family=Kablammo&family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/css/index.css">
+    <title>Trang chủ</title>
+</head>
+<body>
+    <header class="container">
+        <div class="logo"><img src="asset/Pictures/Logo.svg" alt=""></div>
+        <nav>
+            <a href="" class="active">Trang chủ</a>
+            <a href="">Giới thiệu</a>
+            <a href="contact.html">Liên hệ</a>
+        </nav>
+        <div class="notification">
+            <div class="search">
+                <input type="text" placeholder="Tìm kiếm ...">
+                <div class="btn-search">
+                    <i data-lucide="search"></i>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="login" id="dropdownBtn">
+                    <img src="asset/Pictures/pet_cloud_uside 1.svg" alt="">
+                </div>
+                <ul class="dropdown-content" id="dropdownMenu">
+                    <li><a href="login.html" id="user">Thành viên</a></li>
+                    <li><a href="#" id="admin">Admin</a></li>
+                </ul>
+            </div>
+            <div class="notifi">
+                <i data-lucide="bell-ring"></i>
+            </div>
+        </div>
+    </header>
+    <div class="section">
+        <div class="title_top">Tài Liệu Khó, Có</div>
+        <div class="title_bottom">Doc<span>Z</span>one</div>
+        <div class="mascot-wrapper">
+            <div class="mascot">
+                <img src="asset/Pictures/mascot.png" style="width: 450px;" alt="">
+            </div>
+            <div class="container-icon">
+                <div class="icon icon-1"><img src="asset/Pictures/pdf-icon.svg" alt=""></div>
+                <div class="icon icon-2"><img src="asset/Pictures/word-icon.svg" alt=""></div>
+                <div class="icon icon-3"><img src="asset/Pictures/exel.svg" alt=""></div>
+                <div class="icon icon-4"><img src="asset/Pictures/download.svg" alt=""></div>
+            </div>
+        </div>
+        <div class="wrap-search">
+            <i data-lucide="search" id="search"></i>
+            <input type="text" id="searchip" placeholder="Tìm kiếm tài liệu ...">
+            <div class="nextstep" id="nextstep">
+                <img src="asset/Pictures/arrow-right.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="section-newUp">
+        <div class="title a">
+            <div class="left">
+                <i data-lucide="flame"></i>
+                <p>Tài liệu đã tải lên</p>
+            </div>
+            <div class="filter">
+                <div class="box">
+                    <div class="filter-icon">
+                        <i data-lucide="chart-bar-stacked"></i>
+                    </div>
+                    <select name="" id="filterCategory">
+                        <option value="ALL">Tất cả danh mục</option>
+                        <option value="Văn học">Văn học</option>
+                        <option value="Kinh tế">Kinh tế</option>
+                        <option value="Thiếu nhi">Thiếu nhi</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <div class="filter-icon">
+                        <i data-lucide="layout-panel-left"></i>
+                    </div>
+                    <select name="" id="filterPrice">
+                        <option value="ALL">Tất cả giá</option>
+                        <option value="UNDER_100"> Rẻ hơn 100.000 </option>
+                        <option value="OVER_100">Mắc hơn 100.000</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="arrow" id="arrowLeft">
+                <i data-lucide="arrow-left"></i>
+            </div>
+            <div class="wrap-inner" id="cardContainer"></div>
+            <div class="arrow" id="arrowRight">
+                <i data-lucide="arrow-right"></i>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="top">
+                <div class="item">
+                    <div class="logo">
+                        <img src="asset/Pictures/Logo.svg" alt="">
+                    </div>
+                    <p>Cảm ơn bạn vì đã chọn dừng chân ở trang web này, chúc bạn có thể tìm được sách mong muốn và thành công trong học tập</p>
+                </div>
+                <div class="item1">
+                    <div class="title">Khám phá</div>
+                    <div class="link">
+                        <p>Đề thi</p>
+                        <p>Bài giảng</p>
+                    </div>
+                </div>
+                <div class="item1">
+                    <div class="title">Cộng đồng</div>
+                    <div class="link">
+                        <p>Tải tài liệu lên</p>
+                    </div>
+                </div>
+                <div class="item1">
+                    <div class="title">Mạng xã hội</div>
+                    <div class="social">
+                        <div class="box">
+                            <img src="asset/Pictures/instagram.jpg" alt="">
+                        </div>
+                        <div class="box">
+                            <img src="asset/Pictures/facebook.jpg" alt="">
+                        </div>
+                        <div class="box">
+                            <img src="asset/Pictures/youtube.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="asset/js/index.js"></script>
+</body>
